@@ -1,27 +1,43 @@
 body {
-    background-color: rgb(43, 43, 43);
-    color: #fff2ea;
+    background-color: #43455A;
+    color: #F6F6F6;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
 }
 
 nav {
-    background-color: rgb(23, 24, 24);
+    background-color: #272839;
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0; /* Stay at the top */
+    width: 210px; /* Set the width of the sidebar */
+    z-index: 1; /* Stay on top */
 }
 
 nav ul{
     list-style: none;
-    text-align: right;
+    text-align: left;
 }
 
 nav li {
     display: inline-block;
-    margin: 0.5em;
+    margin: 0.75em 0.5em;
+}
+a {
+    font-weight: bold;
+    color: #F6F6F6;
+    outline: none;
+    text-decoration: none;
 }
 main {
-    margin: 0.5em;
+    margin-left: 210px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
 }
 h1 {
+    font-weight: bold;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
@@ -47,6 +63,15 @@ section {
     margin-top: 0.5em;
 }
 
+#future {
+    font-size: 1.5em;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 ul {
     font-size: 0.7em;
     list-style-type: circle;
@@ -59,4 +84,16 @@ ol {
     list-style-type: decimal;
     list-style-position: inside;
     margin: 0.5em;
+}
+
+.li2, .li3 {
+    font-size: 0.9em;
+    list-style-type: none;
+    margin: 0.5em;
+    text-indent: 2em;
+}
+
+.li3 {
+    font-size: 0.8em;
+    text-indent: 2.4em;
 }

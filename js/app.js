@@ -2,10 +2,6 @@
 
 var score = 0;
 
-var who = prompt('What is your name?');
-console.log('User\'s name is ' + who);
-alert('Hello, ' + who + '! Well this is the first time we meet. Let\' play yes/no game to get to know me!');
-
 function getQ1() {
   var question1 = prompt('My real name is Jeremiah! (Y/N)');
   console.log('User answered "' + question1 + '" to "My real name is Jeremiah!"');
@@ -13,9 +9,12 @@ function getQ1() {
   if (question1.charAt(0) === 'y') {
     alert('My real name is Kyungrae! But you can call me Jeremiah too');
   }
-  else {
+  else if (question1.charAt(0) === 'n') {
     alert('My real name is Kyungrae. How did you know Jeremiah is not my real name... o_o');
     score++;
+  }
+  else {
+    alert('That is an invalid entry. My real name is Kyungrae.');
   }
 }
 
@@ -27,8 +26,11 @@ function getQ2() {
     alert('That\'s correct!! I love dogs!! :D');
     score++;
   }
-  else {
+  else if (question2.charAt(0) === 'n') {
     alert('No not really... But maybe I should name my future dog Mufasa');
+  }
+  else {
+    alert('That is an invalid entry. I love dogs!!');
   }
 }
 
@@ -40,8 +42,11 @@ function getQ3() {
     alert('That\'s correct!!! Now you know where to go eat when we meet :D');
     score++;
   }
-  else {
+  else if (question3.charAt(0) === 'n') {
     alert('INCORRECT!!! GO GET ME A CHEESEBURGER NOW!!!!');
+  }
+  else {
+    alert('That is an invalid entry. My favorite food IS cheeseburger!!!');
   }
 }
 
@@ -52,9 +57,12 @@ function getQ4() {
   if (question4.charAt(0) === 'y') {
     alert('No... But I\'m still growing... Right...?');
   }
-  else {
+  else if (question4.charAt(0) === 'n') {
     alert('You right... But I\'ll be as tall as Space Needle one day!!!!');
     score++;
+  }
+  else {
+    alert('That is an invalid entry. I am SHORT!!!!');
   }
 }
 
@@ -66,8 +74,11 @@ function getQ5() {
     alert('Well I\'m just excited to meet you!!!!!');
     score++;
   }
-  else {
+  else if (question5.charAt(0) === 'n') {
     alert('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+  }
+  else {
+    alert('That is an invalid entry. I am probabaly using lots of ! :)');
   }
 }
 
@@ -88,10 +99,10 @@ function getQ6() {
       alert('That\'s too high. Try again! (' + i + '/4)');
     }
     else if (question6 < 3 && i === 4) {
-      alert('That\'s still too low. Booo nice try...  (' + i + '/4)');
+      alert('That\'s still too low. My favorite number is 3! Nice try...  (' + i + '/4)');
     }
     else if (question6 > 3 && i === 4) {
-      alert('That\'s still too high. Booo nice try... (' + i + '/4)');
+      alert('That\'s still too high. My favorite number is 3! Nice try... (' + i + '/4)');
     }
     else {
       alert('Type in a number to answer the question!!! (' + i + '/4)');
@@ -103,10 +114,8 @@ function getQ6() {
 function getQ7() {
   var answerKey7 = ['Seattle', 'Chicago', 'Seoul', 'Atlanta', 'New York', 'Portland'];
   var userKey7 = [];
-  
   for (var j = 1; j <= 6; j++){
     var question7 = prompt('Can you guess a city I have visited? You get 6 tries!');
-  
     for (var k = 0; k <= answerKey7.length - 1; k++) {
       if (answerKey7[k].toLowerCase() === question7.toLowerCase()) {
         userKey7.push(true);
@@ -115,7 +124,6 @@ function getQ7() {
         userKey7.push(false);
       }
     }
-  
     if (userKey7.includes(true)) {
       alert('That\'s correct! I have visted ' + answerKey7.join(', '));
       score++;
@@ -131,12 +139,18 @@ function getQ7() {
   console.log('User attempted ' + (j - 1) + ' times to answer "Can you guess a city I have visited"');
 }
 
-getQ1();
-getQ2();
-getQ3();
-getQ4();
-getQ5();
-getQ6();
-getQ7();
-
-alert('You got ' + score + ' out of 7 questions correct, ' + who + '! It\'s time to get to know me more!');
+var who = prompt('What is your name?');
+console.log('User\'s name is ' + who);
+var play = confirm('Hello, ' + who + '! Well this is the first time we meet. Would you like to play yes/no game get to know me before entering the page?');
+if (play === true) {
+  getQ1();
+  getQ2();
+  getQ3();
+  getQ4();
+  getQ5();
+  getQ6();
+  getQ7();
+  alert('You got ' + score + ' out of 7 questions correct, ' + who + '! It\'s time to get to know me more!');
+} else {
+  alert('No worries!');
+}

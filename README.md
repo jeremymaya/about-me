@@ -1,3 +1,15 @@
+LAB - Lab 05
+Project Name: About Me
+1. Moved navigation bar to the side and added same page links
+2. Applied new color palette
+3. Added content
+4. Added confirm to so user can choose to start/cancel yes/no game
+5. Updated Q1-Q5 to check if user is inputing a valid answer
+
+Color pallette: https://www.smashingmagazine.com/2016/04/web-developer-guide-color/
+Side navigation source: https://www.w3schools.com/howto/howto_js_sidenav.asp
+Text vertical alignmnet source: https://css-tricks.com/centering-css-complete-guide/
+
 LAB - Lab 04
 Project Name: About Me
 Created functions to wrap around all questions. Fixed logic and scoring issues. 
